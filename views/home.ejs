@@ -1,0 +1,19 @@
+<%- include ("partials/header.ejs") -%> 
+<!-- <div class="container-fluid"> -->
+    <h1>Home</h1>
+    <p><%= startingContent%></p> 
+
+    <!-- <% for( let i = 0; i < post.length; i++ ) { %>
+        <h1><%= post[i]['Title']; %> </h1>
+
+        <p><%= post[i]['Content']; %> </p>
+        
+    <% } %> -->
+
+    <% post.forEach(post => { %>
+        <h1><%= post.Title;  %> </h1>
+        <p><%= post.Content.substring(0, 100) + " ...";%><a href="/posts/<%= post.Title %>">Read More</a></p>
+    <% }) %> 
+
+
+<%- include ("partials/footer") -%> 
